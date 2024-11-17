@@ -88,5 +88,14 @@ class CategoryServiceTests {
 		
 		assertTrue(true);
 	}
+	
+	@Test
+	void testDeleteCategoryByIdFromBook() {
+		service.createCategory(category);
+		
+		service.deleteCategoryByIdFromBook(ID);
+		
+		assertTrue(true);
+	}
 
 }

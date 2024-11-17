@@ -88,5 +88,14 @@ class AuthorServiceTests {
 		
 		assertTrue(true);
 	}
+	
+	@Test
+	void testDeleteAuthorByIdFromBook() {
+		service.createAuthor(author);
+		
+		service.deleteAuthorByIdFromBook(ID);
+		
+		assertTrue(true);
+	}
 
 }

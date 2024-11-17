@@ -71,6 +71,7 @@ public class CategoryController {
 	@DeleteMapping("/categories/{id}")
 	public ResponseEntity<Object> deleteCategory(@PathVariable Integer id) {
 		try {
+			this.categoryService.deleteCategoryByIdFromBook(id);
 			this.categoryService.deleteCategoryById(id);
 			
 			return Utilities.generateResponse(HttpStatus.OK, "Category deleted successfully");

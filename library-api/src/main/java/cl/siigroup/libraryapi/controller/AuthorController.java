@@ -71,6 +71,7 @@ public class AuthorController {
 	@DeleteMapping("/authors/{id}")
 	public ResponseEntity<Object> deleteAuthor(@PathVariable Integer id) {
 		try {
+			this.authorService.deleteAuthorByIdFromBook(id);
 			this.authorService.deleteAuthorById(id);
 			
 			return Utilities.generateResponse(HttpStatus.OK, "Author deleted successfully");

@@ -1,6 +1,9 @@
 package cl.siigroup.libraryapi.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 import cl.siigroup.libraryapi.model.CategoryModel;
 
@@ -12,5 +15,10 @@ import cl.siigroup.libraryapi.model.CategoryModel;
 */
 
 public interface CategoryJPARepository extends JpaRepository<CategoryModel, Integer> {
+	
+	@Transactional
+	@Modifying
+	@Query(value = "DELETE FROM Book WHERE category_id = :id", nativeQuery = true)
+	int bookDeleteByCategoryId(Integer id);
 
 }

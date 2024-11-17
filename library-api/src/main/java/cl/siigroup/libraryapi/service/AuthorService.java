@@ -46,5 +46,9 @@ public class AuthorService {
 	public void deleteAuthorById(Integer id) {
 		this.repository.deleteById(id);
 	}
+	
+	public void deleteAuthorByIdFromBook(Integer id) {
+		this.repository.bookDeleteByAuthorId(id);
+	}
 
 }

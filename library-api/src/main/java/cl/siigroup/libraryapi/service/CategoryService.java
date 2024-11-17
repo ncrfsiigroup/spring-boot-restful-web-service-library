@@ -46,5 +46,9 @@ public class CategoryService {
 	public void deleteCategoryById(Integer id) {
 		this.repository.deleteById(id);
 	}
+	
+	public void deleteCategoryByIdFromBook(Integer id) {
+		this.repository.bookDeleteByCategoryId(id);
+	}
 
 }
